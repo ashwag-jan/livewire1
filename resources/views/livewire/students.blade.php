@@ -4,9 +4,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+            {{session('message')}}
+            </div>
+            @endif
             <div class="card">
                 <div class="card-header">
-                    <h3>All Students</h3>
+                    <h3>All Students
+                    
+                    @include('livewire.create')
+                    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
+                    Add Student
+                    </button>
+
+                    
+                    </h3>
                 </div>
                 <div class="card-body">
                 <table class="table table-striped">
